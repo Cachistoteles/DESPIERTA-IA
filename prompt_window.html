@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana de Prompts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #response {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        .btn {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ventana para Ingresar Prompts</h1>
+    <textarea id="promptInput" rows="4" cols="50" placeholder="Escribe tu prompt aquí..."></textarea><br>
+    <button class="btn" onclick="sendPrompt()">Enviar Prompt</button>
+    <div id="response"></div>
+
+    <script>
+        function sendPrompt() {
+            const prompt = document.getElementById('promptInput').value;
+            const responseDiv = document.getElementById('response');
+
+            if (prompt.trim() === "") {
+                responseDiv.innerHTML = "<p style='color: red;'>Por favor, escribe un prompt.</p>";
+                return;
+            }
+
+            // Simular una respuesta de IA
+            responseDiv.innerHTML = "<p><strong>Prompt enviado:</strong> " + prompt + "</p>";
+            responseDiv.innerHTML += "<p><strong>Respuesta de la IA:</strong> Aquí va la respuesta generada...</p>";
+        }
+    </script>
+</body>
+</html>
